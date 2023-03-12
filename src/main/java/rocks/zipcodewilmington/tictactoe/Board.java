@@ -11,19 +11,19 @@ private static Character[][] matrix;
     }
 
     public Boolean isInFavorOfX() {
-
+        return columnCheck('X');
         //if in of of X either horizontal vertical or diagnol, return true
         //import X into Checkers as (win)
-        return null;
+
     }
 
     public Boolean isInFavorOfO() {
-        return null;
+        return columnCheck('O');
         //if in of of O either horizontal vertical or diagnol, return true
     }
 
     public Boolean isTie() {
-        return null;
+        return (!isInFavorOfO() && !isInFavorOfX());
         //if not in favor of x or O return true
     }
 
@@ -31,15 +31,27 @@ private static Character[][] matrix;
         //if isTie == true {return "Tie"}
         //ifFavorOfO
         //if FavorOfX
-        return null;
+        if (isInFavorOfX()){
+            return "X";
+        }
+        else if (isInFavorOfO()){
+            return "O";
+        }
+        else {
+            return "";
+        }
     }
-    public boolean verticalCheck(char win){
+    public boolean columnCheck(char win){
         //return boolean
+        return (win == matrix[0][0] && win == matrix[1][0] && win == matrix[2][0]);
 
-        //
-        return true;
+        /*{'X', 'O', ' '},
+        {'X', ' ', ' '},  <example
+        {'X', 'O', ' '}*/
+
+
     }
-    public boolean horizontalChecker(char win){
+    public boolean rowChecker(char win){
         return true;
 }
     public boolean diagnolChecker(char win){
