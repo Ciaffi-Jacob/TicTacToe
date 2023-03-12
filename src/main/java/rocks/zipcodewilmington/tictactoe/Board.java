@@ -11,14 +11,14 @@ private static Character[][] matrix;
     }
 
     public Boolean isInFavorOfX() {
-        return columnCheck('X');
+        return columnCheck('X') || rowChecker('X') ||diagnolChecker('X');
         //if in of of X either horizontal vertical or diagnol, return true
         //import X into Checkers as (win)
 
     }
 
     public Boolean isInFavorOfO() {
-        return columnCheck('O') || rowChecker('O');
+        return columnCheck('O') || rowChecker('O') || diagnolChecker('O');
         //if in of of O either horizontal vertical or diagnol, return true
     }
 
@@ -55,6 +55,6 @@ private static Character[][] matrix;
         return (win == matrix[0][0] && win == matrix[0][1] && win == matrix[0][2]);
 }
     public boolean diagnolChecker(char win){
-        return true;
+        return (win == matrix[0][0] && win == matrix[1][1] && win == matrix[2][2]);
     }
 }
