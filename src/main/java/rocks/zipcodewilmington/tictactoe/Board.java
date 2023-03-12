@@ -18,7 +18,7 @@ private static Character[][] matrix;
     }
 
     public Boolean isInFavorOfO() {
-        return columnCheck('O');
+        return columnCheck('O') || rowChecker('O');
         //if in of of O either horizontal vertical or diagnol, return true
     }
 
@@ -52,7 +52,7 @@ private static Character[][] matrix;
 
     }
     public boolean rowChecker(char win){
-        return true;
+        return (win == matrix[0][0] && win == matrix[0][1] && win == matrix[0][2]);
 }
     public boolean diagnolChecker(char win){
         return true;
