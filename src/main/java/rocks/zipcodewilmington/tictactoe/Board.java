@@ -43,7 +43,9 @@ private static Character[][] matrix;
     }
     public boolean columnCheck(char win){
         //return boolean
-        return (win == matrix[0][0] && win == matrix[1][0] && win == matrix[2][0]);
+        return ((win == matrix[0][0] && win == matrix[1][0] && win == matrix[2][0])
+                || (win == matrix[0][1] && win == matrix[1][1] && win == matrix[2][1])
+                || (win == matrix[0][2] && win == matrix[1][2] && win == matrix[2][2]));
 
         /*{'X', 'O', ' '},
         {'X', ' ', ' '},  <example
@@ -52,9 +54,12 @@ private static Character[][] matrix;
 
     }
     public boolean rowChecker(char win){
-        return (win == matrix[0][0] && win == matrix[0][1] && win == matrix[0][2]);
+        return ((win == matrix[0][0] && win == matrix[0][1] && win == matrix[0][2])
+                || (win == matrix[1][0] && win == matrix[1][1] && win == matrix[1][2])
+                || (win == matrix[2][0] && win == matrix[2][1] && win == matrix[2][2]));
 }
     public boolean diagnolChecker(char win){
-        return (win == matrix[0][0] && win == matrix[1][1] && win == matrix[2][2]);
+        return ((win == matrix[0][0] && win == matrix[1][1] && win == matrix[2][2])
+                || (win == matrix[0][2] && win == matrix[1][1] && win == matrix[2][0]));
     }
 }
